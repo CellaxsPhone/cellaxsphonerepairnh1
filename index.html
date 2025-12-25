@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>CellAXS Phone Repair | Mall of New Hampshire</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Professional phone, tablet, laptop, smartwatch and game console repair. Located at Mall of New Hampshire.">
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -16,11 +15,13 @@
   <nav>
     <a href="devices.html">Devices</a>
     <a href="#appointment">Appointment</a>
+    <a href="#reviews">Reviews</a>
     <a href="#location">Location</a>
     <a href="tel:16039139693" class="cta">Call Now</a>
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <h1>Fast & Reliable Device Repairs</h1>
@@ -29,9 +30,9 @@
   </div>
 </section>
 
+<!-- DEVICES -->
 <section class="section">
   <h2>Devices We Repair</h2>
-
   <div class="devices">
     <div class="device"><img src="images/iphone.jpg.avif"><h3>iPhone</h3></div>
     <div class="device"><img src="images/samsung.jpg.avif"><h3>Samsung</h3></div>
@@ -46,6 +47,7 @@
   </div>
 </section>
 
+<!-- APPOINTMENT -->
 <section id="appointment" class="section appointment">
   <h2>Book an Appointment</h2>
 
@@ -60,7 +62,6 @@
       <option>Samsung</option>
       <option>Google Pixel</option>
       <option>Motorola</option>
-      <option>Other Android</option>
       <option>iPad</option>
       <option>Tablet</option>
       <option>Laptop</option>
@@ -75,6 +76,19 @@
   </form>
 </section>
 
+<!-- REVIEWS -->
+<section id="reviews" class="section reviews">
+  <h2>Leave a Review</h2>
+
+  <form action="mailto:cellaxsphonerepair@gmail.com" method="post" enctype="text/plain">
+    <input type="text" name="Name" placeholder="Your Name" required>
+    <input type="email" name="Email" placeholder="Email (optional)">
+    <textarea name="Review" rows="5" placeholder="Write your review here..." required></textarea>
+    <button type="submit">Submit Review</button>
+  </form>
+</section>
+
+<!-- LOCATION -->
 <section id="location" class="section">
   <h2>Our Location</h2>
 
