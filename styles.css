@@ -9,6 +9,7 @@ body{
   color:#fff;
 }
 
+/* HEADER */
 header{
   display:flex;
   justify-content:space-between;
@@ -33,13 +34,16 @@ header .cta{
   color:#000;
 }
 
+/* HERO */
 .hero{
   min-height:90vh;
   background:
-    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7)),
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.75)),
     url("images/hero.jpg.jpg");
   background-size:cover;
-  background-position:center;
+  background-position:center 35%;
+  background-repeat:no-repeat;
+
   display:flex;
   align-items:center;
   justify-content:center;
@@ -59,6 +63,7 @@ header .cta{
   margin:15px auto;
 }
 
+/* BUTTON */
 .btn{
   display:inline-block;
   margin-top:20px;
@@ -69,12 +74,14 @@ header .cta{
   font-weight:bold;
 }
 
+/* SECTIONS */
 .section{
   padding:70px 30px;
   max-width:1200px;
   margin:auto;
 }
 
+/* DEVICES */
 .devices{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -99,6 +106,7 @@ header .cta{
   padding:18px;
 }
 
+/* APPOINTMENT */
 .appointment{
   background:#151820;
   border-radius:25px;
@@ -117,14 +125,20 @@ input, select, textarea{
   border:none;
 }
 
-button{
-  padding:16px;
-  background:#ff7a18;
-  border:none;
-  border-radius:30px;
-  font-weight:bold;
+/* REVIEWS */
+.reviews{
+  background:#11141a;
+  border-radius:25px;
 }
 
+.reviews form{
+  display:grid;
+  gap:15px;
+  max-width:600px;
+  margin:auto;
+}
+
+/* LOCATION */
 .location{
   display:flex;
   gap:30px;
@@ -144,6 +158,7 @@ button{
   border-radius:16px;
 }
 
+/* FOOTER */
 footer{
   text-align:center;
   padding:30px;
