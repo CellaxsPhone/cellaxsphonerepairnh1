@@ -1,145 +1,104 @@
 *{
+  box-sizing:border-box;
   margin:0;
   padding:0;
-  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-  font-family:Arial, Helvetica, sans-serif;
   background:#0f1115;
   color:#fff;
-  line-height:1.6;
-}
-
-/* HEADER */
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:#000;
-  padding:18px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-header strong{
-  font-size:1.4rem;
-}
-
-header nav a{
-  color:#fff;
-  text-decoration:none;
-  margin-left:20px;
-  font-weight:bold;
-}
-
-header nav a:hover{
-  color:#ff7a18;
-}
-
-header .cta{
-  background:#ff7a18;
-  padding:10px 22px;
-  border-radius:30px;
-  color:#000;
 }
 
 /* HERO */
 .hero{
-  height:90vh;
+  min-height:90vh;
   background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
-    url("images/hero.jpg.jpg") center/cover no-repeat;
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7)),
+    url("../images/hero.jpg.jpg");
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
 }
 
-.hero h1{
-  font-size:3.4rem;
-  color:#ff7a18;
+.hero-content h1{
+  font-size:3rem;
 }
 
-.hero p{
+.hero-content p{
+  margin:15px 0 25px;
   font-size:1.2rem;
-  margin-top:15px;
+  color:#ddd;
 }
 
-/* BUTTON */
 .btn{
-  display:inline-block;
-  margin-top:30px;
-  padding:15px 38px;
+  padding:14px 36px;
   background:#ff7a18;
   color:#000;
   border-radius:40px;
-  font-weight:bold;
   text-decoration:none;
+  font-weight:bold;
 }
 
-/* SECTION */
+/* SECTIONS */
 section{
-  padding:80px 40px;
   max-width:1200px;
   margin:auto;
+  padding:70px 20px;
 }
 
-section h2{
+h2{
   text-align:center;
-  margin-bottom:50px;
-  font-size:2.6rem;
-  color:#ff7a18;
+  margin-bottom:40px;
+  font-size:2.2rem;
+}
+
+/* STORE */
+.store{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.store img{
+  width:100%;
+  border-radius:20px;
 }
 
 /* DEVICES */
 .devices{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:25px;
 }
 
-.device{
-  background:#1a1c22;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 15px 35px rgba(0,0,0,.4);
-  transition:.3s;
-}
-
-.device:hover{
-  transform:translateY(-8px);
-}
-
-.device img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-}
-
-.device h3{
-  padding:18px;
+.devices div{
+  background:#1b1e25;
+  padding:20px;
+  border-radius:20px;
   text-align:center;
+}
+
+.devices img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:15px;
+  margin-bottom:10px;
 }
 
 /* APPOINTMENT */
 .appointment-wrap{
   background:linear-gradient(135deg,#ff7a18,#ff9a3c);
-  border-radius:30px;
-  padding:60px 40px;
   color:#000;
-  box-shadow:0 25px 50px rgba(0,0,0,.4);
-}
-
-.appointment-wrap h3{
-  font-size:2rem;
-  margin-bottom:15px;
-}
-
-.appointment-wrap p{
-  max-width:700px;
-  margin-bottom:35px;
+  padding:60px 40px;
+  border-radius:30px;
 }
 
 .appointment-form{
@@ -151,89 +110,65 @@ section h2{
 .appointment-form input,
 .appointment-form select,
 .appointment-form textarea{
-  padding:16px;
-  border-radius:12px;
+  padding:15px;
   border:none;
+  border-radius:12px;
 }
 
-.appointment-form textarea{
+.appointment-form textarea,
+.appointment-form button{
   grid-column:1/3;
 }
 
 .appointment-form button{
-  grid-column:1/3;
-  padding:16px;
   background:#000;
   color:#fff;
   border:none;
+  padding:16px;
   border-radius:40px;
-  font-weight:bold;
+  font-size:1.1rem;
   cursor:pointer;
 }
 
 /* REVIEWS */
 .review-box{
-  background:#1a1c22;
-  border-radius:25px;
-  padding:45px;
-  box-shadow:0 20px 40px rgba(0,0,0,.45);
-}
-
-.review-box h3{
-  color:#ff7a18;
-  margin-bottom:15px;
-}
-
-.review-box p{
-  margin-bottom:25px;
-  color:#ccc;
-}
-
-.review-box form{
-  display:grid;
-  gap:15px;
+  background:#1b1e25;
+  padding:50px;
+  border-radius:30px;
 }
 
 .review-box input,
 .review-box textarea{
+  width:100%;
   padding:14px;
-  border-radius:10px;
+  margin-bottom:15px;
+  border-radius:12px;
   border:none;
 }
 
 .review-box button{
   background:#ff7a18;
-  color:#000;
   border:none;
-  padding:14px;
+  padding:14px 30px;
   border-radius:30px;
   font-weight:bold;
+  cursor:pointer;
 }
 
 .google-review{
-  margin-top:25px;
+  margin-top:20px;
   text-align:center;
 }
 
 .google-review a{
   color:#ff7a18;
-  font-weight:bold;
   text-decoration:none;
-}
-
-/* MAP */
-.map iframe{
-  width:100%;
-  height:350px;
-  border-radius:20px;
-  border:none;
 }
 
 /* FOOTER */
 footer{
   background:#000;
-  padding:30px;
+  padding:25px;
   text-align:center;
   color:#777;
-  margin-top:60px;
 }
