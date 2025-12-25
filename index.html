@@ -2,79 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CellAXS Phone Repair</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CellAXS Phone Repair | Manchester NH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional phone, tablet, laptop and smartwatch repair in Manchester NH. Fast & reliable service at Mall of New Hampshire.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
   <strong>CellAXS Phone Repair</strong>
   <nav>
     <a href="devices.html">Devices</a>
     <a href="#appointment">Appointment</a>
+    <a href="#reviews">Reviews</a>
     <a href="#location">Location</a>
     <a href="tel:16039139693" class="cta">Call Now</a>
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <div>
     <h1>Fast & Reliable Device Repairs</h1>
-    <p>Same-Day Service • Trusted Technicians • Mall of New Hampshire</p>
-    <a href="#appointment" class="btn">Book Appointment</a>
+    <p>Phones • Tablets • Laptops • Smartwatches • Consoles</p>
+    <a href="#appointment" class="btn">Book an Appointment</a>
   </div>
 </section>
 
+<!-- DEVICES -->
 <section>
   <h2>Devices We Repair</h2>
   <div class="devices">
     <div class="device"><img src="images/iphone.jpg.avif"><h3>iPhone</h3></div>
     <div class="device"><img src="images/samsung.jpg.avif"><h3>Samsung</h3></div>
     <div class="device"><img src="images/pixel.jpg.avif"><h3>Google Pixel</h3></div>
-    <div class="device"><img src="images/android.jpg.avif"><h3>Android</h3></div>
-    <div class="device"><img src="images/laptop.jpg.avif"><h3>Laptop</h3></div>
+    <div class="device"><img src="images/android.jpg.avif"><h3>Android Phones</h3></div>
+    <div class="device"><img src="images/ipad.jpg.jpg"><h3>iPad</h3></div>
+    <div class="device"><img src="images/tablet.jpg.avif"><h3>Tablets</h3></div>
+    <div class="device"><img src="images/laptop.jpg.avif"><h3>Laptops</h3></div>
+    <div class="device"><img src="images/macbook.jpg.jpg"><h3>MacBook</h3></div>
     <div class="device"><img src="images/applewatch.jpg.avif"><h3>Apple Watch</h3></div>
+    <div class="device"><img src="images/console.jpg.avif"><h3>Game Consoles</h3></div>
+    <div class="device"><img src="images/other.jpg.avif"><h3>Other Devices</h3></div>
   </div>
 </section>
 
+<!-- APPOINTMENT -->
 <section id="appointment">
   <h2>Book an Appointment</h2>
-  <div class="appointment">
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Email" required>
-      <select>
+
+  <div class="appointment-wrap">
+    <h3>Professional Repair Service</h3>
+    <p>
+      Complete the form below and our technicians will contact you shortly.
+      Walk-ins are always welcome at our Mall of New Hampshire location.
+    </p>
+
+    <form
+      class="appointment-form"
+      action="mailto:cellaxsphonerepair@gmail.com"
+      method="post"
+      enctype="text/plain">
+
+      <input type="text" name="Name" placeholder="Full Name" required>
+      <input type="tel" name="Phone" placeholder="Phone Number" required>
+
+      <input type="email" name="Email" placeholder="Email Address" required>
+      <select name="Device">
         <option>iPhone</option>
         <option>Samsung</option>
+        <option>Google Pixel</option>
         <option>Android</option>
-        <option>Tablet</option>
-        <option>Laptop</option>
+        <option>Tablet / iPad</option>
+        <option>Laptop / MacBook</option>
+        <option>Apple Watch</option>
+        <option>Game Console</option>
+        <option>Other</option>
       </select>
-      <textarea rows="4" placeholder="Describe the issue"></textarea>
-      <button>Submit</button>
+
+      <textarea name="Issue" rows="4" placeholder="Describe the issue"></textarea>
+
+      <button type="submit">Request Appointment</button>
     </form>
   </div>
 </section>
 
-<section>
+<!-- REVIEWS -->
+<section id="reviews">
   <h2>Customer Reviews</h2>
-  <div class="reviews">
-    <div class="review">⭐️⭐️⭐️⭐️⭐️<br>Fast service and great price!</div>
-    <div class="review">⭐️⭐️⭐️⭐️⭐️<br>Fixed my phone in 30 minutes.</div>
-    <div class="review">⭐️⭐️⭐️⭐️⭐️<br>Best repair shop in Manchester.</div>
+
+  <div class="review-box">
+    <h3>Leave a Review</h3>
+    <p>
+      We value honest feedback from our customers.
+      Your review helps us improve and helps others trust our service.
+    </p>
+
+    <form
+      action="mailto:cellaxsphonerepair@gmail.com"
+      method="post"
+      enctype="text/plain">
+
+      <input type="text" name="Name" placeholder="Your Name" required>
+      <input type="email" name="Email" placeholder="Email (optional)">
+      <textarea name="Review" rows="5" placeholder="Write your honest review..." required></textarea>
+
+      <button type="submit">Submit Review</button>
+    </form>
+
+    <div class="google-review">
+      ⭐ Prefer Google Reviews?<br>
+      <a href="https://www.google.com/search?q=CellAXS+Phone+Repair+Manchester+NH" target="_blank">
+        Leave a Google Review
+      </a>
+    </div>
   </div>
 </section>
 
+<!-- LOCATION -->
 <section id="location">
   <h2>Our Location</h2>
   <div class="map">
-    <iframe src="https://www.google.com/maps?q=Mall+of+New+Hampshire&output=embed"></iframe>
+    <iframe
+      src="https://www.google.com/maps?q=1500+S+Willow+St+Manchester+NH+03103&output=embed"
+      loading="lazy">
+    </iframe>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  © 2025 CellAXS Phone Repair – Mall of New Hampshire
+  © 2025 CellAXS Phone Repair · Mall of New Hampshire · Manchester, NH
 </footer>
 
 </body>
