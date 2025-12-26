@@ -50,15 +50,35 @@
   </div>
 </section>
 
-<!-- APPOINTMENT -->
+<!-- APPOINTMENT (CUSTOM FORM) -->
 <section id="appointment" class="section dark">
   <div class="appointment-card">
     <h2>Book an Appointment</h2>
-    <p>Submit the form and our technicians will contact you shortly.</p>
+    <p>Fill out the form and we’ll contact you shortly.</p>
 
-    <iframe
-      src="https://docs.google.com/forms/d/e/1FAIpQLSds5td8rRLWSwMX6JR4ak4zWslihP8SLXWrYnoieOiSL3pK6w/viewform?embedded=true">
-    </iframe>
+    <form class="appointment-form">
+      <input type="text" placeholder="Full Name" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <input type="email" placeholder="Email Address" required>
+
+      <select required>
+        <option value="">Select Device</option>
+        <option>iPhone</option>
+        <option>Samsung</option>
+        <option>Android</option>
+        <option>Google Pixel</option>
+        <option>Motorola</option>
+        <option>Tablet / iPad</option>
+        <option>Laptop / MacBook</option>
+        <option>Apple Watch</option>
+        <option>Game Console</option>
+        <option>Other</option>
+      </select>
+
+      <textarea placeholder="Describe the issue" rows="4"></textarea>
+
+      <button type="submit" class="btn-primary">Request Appointment</button>
+    </form>
   </div>
 </section>
 
