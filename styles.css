@@ -115,3 +115,37 @@ footer{
   padding:30px;
   background:#081726;
 }
+
+/* STICKY CALL BAR */
+.sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  z-index: 9999;
+  font-weight: 700;
+}
+
+.sticky-bar a {
+  flex: 1;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+.sticky-call {
+  background: #0b3c5d; /* navy blue */
+}
+
+.sticky-directions {
+  background: #ff7a18; /* accent orange */
+}
+
+@media (min-width: 768px) {
+  .sticky-bar {
+    display: none;
+  }
+}
