@@ -158,3 +158,26 @@ footer{
   text-align:center;
   color:#aaa;
 }
+
+/* APPOINTMENT FORM */
+.appointment-form{
+  display:grid;
+  gap:16px;
+  margin-top:25px;
+}
+
+.appointment-form input,
+.appointment-form select,
+.appointment-form textarea{
+  padding:14px 16px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  font-size:14px;
+}
+
+.appointment-form button{
+  border:none;
+  cursor:pointer;
+  margin-top:10px;
+}
+
