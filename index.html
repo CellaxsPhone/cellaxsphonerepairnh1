@@ -1,141 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CellAXS Phone Repair | Manchester NH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="navbar">
+  <h1 class="logo">CELLAXS Phone Repair</h1>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="images/hero.jpg.jpg" alt="CellAXS Phone Repair">
+  <div class="hero-text">
+    <h2>Professional Device Repair</h2>
+    <p>Phones • Tablets • Laptops • Consoles</p>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section class="appointment">
+  <h2>Book an Appointment</h2>
+
+  <form class="appointment-form">
+
+    <input type="text" placeholder="Full Name" required>
+    <input type="tel" placeholder="Phone Number" required>
+
+    <select id="brand" required>
+      <option value="">Select Brand</option>
+      <option value="Apple">Apple (iPhone)</option>
+      <option value="Samsung">Samsung</option>
+      <option value="Google">Google Pixel</option>
+      <option value="Motorola">Motorola</option>
+      <option value="Tablet">Tablet</option>
+      <option value="Laptop">Laptop</option>
+      <option value="Watch">Smartwatch</option>
+      <option value="Console">Game Console</option>
+      <option value="Other">Other Device</option>
+    </select>
+
+    <select id="series" required>
+      <option value="">Select Series</option>
+    </select>
+
+    <select id="model" required>
+      <option value="">Select Model</option>
+    </select>
+
+    <select required>
+      <option value="">Repair Type</option>
+      <option>Screen Repair</option>
+      <option>Battery Replacement</option>
+      <option>Charging Port</option>
+      <option>Camera</option>
+      <option>Water Damage</option>
+      <option>Other Issue</option>
+    </select>
+
+    <button type="submit">Submit Appointment</button>
+
+  </form>
+</section>
+
+<!-- SCRIPT (EN ALTA KOYMAK ÇOK ÖNEMLİ) -->
 <script>
 const brand = document.getElementById("brand");
 const series = document.getElementById("series");
 const model = document.getElementById("model");
 
-/* UTIL FUNCTIONS */
 function range(start, end) {
   return Array.from({ length: end - start + 1 }, (_, i) => start + i);
 }
 
-function addVariants(base, variants) {
-  return variants.map(v => `${base} ${v}`);
-}
-
-/* DATA GENERATORS */
 const data = {
-
   Apple: {
     "iPhone Series": () => {
-      let models = [];
+      let arr = [];
       range(6, 17).forEach(n => {
-        models.push(`iPhone ${n}`);
-        models.push(`iPhone ${n} Plus`);
-        models.push(`iPhone ${n} Pro`);
-        models.push(`iPhone ${n} Pro Max`);
-        if (n >= 12 && n <= 13) models.push(`iPhone ${n} Mini`);
+        arr.push(`iPhone ${n}`, `iPhone ${n} Plus`, `iPhone ${n} Pro`, `iPhone ${n} Pro Max`);
+        if (n === 12 || n === 13) arr.push(`iPhone ${n} Mini`);
       });
-      return models;
+      return arr;
     }
   },
 
   Samsung: {
     "Galaxy S Series": () => {
-      let models = [];
+      let arr = [];
       range(6, 24).forEach(n => {
-        models.push(`Galaxy S${n}`);
-        models.push(`Galaxy S${n}+`);
-        models.push(`Galaxy S${n} Ultra`);
-        models.push(`Galaxy S${n} FE`);
+        arr.push(`Galaxy S${n}`, `Galaxy S${n}+`, `Galaxy S${n} Ultra`, `Galaxy S${n} FE`);
       });
-      return models;
+      return arr;
     },
 
     "Galaxy A Series": () => {
-      let models = [];
+      let arr = [];
       range(1, 99).forEach(n => {
-        models.push(`Galaxy A${n}`);
-        models.push(`Galaxy A${n}s`);
-        models.push(`Galaxy A${n} 5G`);
+        arr.push(`Galaxy A${n}`, `Galaxy A${n}s`, `Galaxy A${n} 5G`);
       });
-      return models;
-    },
-
-    "Galaxy Z Series": () => [
-      "Z Flip", "Z Flip 3", "Z Flip 4", "Z Flip 5",
-      "Z Fold", "Z Fold 2", "Z Fold 3", "Z Fold 4", "Z Fold 5"
-    ]
-  },
-
-  Google: {
-    "Pixel Series": () => {
-      let models = [];
-      range(1, 9).forEach(n => {
-        models.push(`Pixel ${n}`);
-        models.push(`Pixel ${n} Pro`);
-        if (n >= 6) models.push(`Pixel ${n} Fold`);
-      });
-      return models;
+      return arr;
     }
-  },
-
-  Motorola: {
-    "Moto G Series": () => [
-      "Moto G Play", "Moto G Power", "Moto G Stylus",
-      "Moto G Fast", "Moto G Pure"
-    ],
-    "Moto E Series": () => [
-      "Moto E", "Moto E5", "Moto E6", "Moto E7", "Moto E13", "Moto E22"
-    ],
-    "Edge Series": () => [
-      "Motorola Edge", "Edge+", "Edge 20", "Edge 30", "Edge 40", "Edge 50"
-    ],
-    "Razr Series": () => [
-      "Razr 5G", "Razr+", "Razr 40", "Razr 40 Ultra"
-    ]
-  },
-
-  Tablet: {
-    "iPad": () => [
-      "iPad 7th Gen", "8th Gen", "9th Gen", "10th Gen"
-    ],
-    "iPad Air": () => [
-      "Air 3", "Air 4", "Air 5"
-    ],
-    "iPad Pro": () => [
-      "11-inch", "12.9-inch"
-    ],
-    "Android Tablet": () => [
-      "Galaxy Tab A", "Galaxy Tab S", "Other Android Tablet"
-    ]
-  },
-
-  Laptop: {
-    "MacBook": () => [
-      "MacBook Air", "MacBook Pro 13", "MacBook Pro 14", "MacBook Pro 16"
-    ],
-    "Windows Laptop": () => [
-      "Dell", "HP", "Lenovo", "Asus", "Acer"
-    ]
-  },
-
-  Watch: {
-    "Apple Watch": () => [
-      "Series 4", "5", "6", "7", "8", "9", "Ultra", "Ultra 2"
-    ],
-    "Samsung Watch": () => [
-      "Galaxy Watch 4", "5", "6"
-    ]
-  },
-
-  Console: {
-    "PlayStation": () => [
-      "PS4", "PS4 Slim", "PS4 Pro", "PS5", "PS5 Digital"
-    ],
-    "Xbox": () => [
-      "Xbox One", "One S", "One X", "Series S", "Series X"
-    ],
-    "Nintendo": () => [
-      "Switch", "Switch OLED", "Switch Lite"
-    ]
-  },
-
-  Other: {
-    "Other Device": () => ["Please describe your device"]
   }
 };
 
-/* EVENTS */
 brand.addEventListener("change", () => {
   series.innerHTML = '<option value="">Select Series</option>';
   model.innerHTML = '<option value="">Select Model</option>';
@@ -150,11 +125,14 @@ brand.addEventListener("change", () => {
 series.addEventListener("change", () => {
   model.innerHTML = '<option value="">Select Model</option>';
 
-  const generator = data[brand.value][series.value];
-  if (generator) {
-    generator().forEach(m => {
+  const gen = data[brand.value][series.value];
+  if (gen) {
+    gen().forEach(m => {
       model.innerHTML += `<option>${m}</option>`;
     });
   }
 });
 </script>
+
+</body>
+</html>
