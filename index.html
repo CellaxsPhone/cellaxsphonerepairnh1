@@ -1,188 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>CellAXS Phone Repair | Manchester NH</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- SEO -->
-  <meta name="description" content="CellAXS Phone Repair in Manchester NH. iPhone, Samsung, Pixel, Motorola, Tablets, Laptops & Game Consoles repair." />
-</head>
-
-<body>
-
-<!-- ================= NAVBAR ================= -->
-<header class="navbar">
-  <div class="container">
-    <h1 class="logo">CELLAXS</h1>
-    <nav>
-      <a href="#appointment">Appointment</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#location">Location</a>
-    </nav>
-  </div>
-</header>
-
-<!-- ================= HERO ================= -->
-<section class="hero">
-  <img src="images/hero.jpg.jpg" alt="CellAXS Phone Repair">
-  <div class="hero-text">
-    <h2>Professional Phone Repair</h2>
-    <p>Fast • Reliable • Affordable</p>
-  </div>
-</section>
-
-<!-- ================= APPOINTMENT ================= -->
-<section id="appointment" class="appointment">
-  <h2>Book an Appointment</h2>
-
-  <form class="appointment-form">
-
-    <div class="form-row">
-      <input type="text" placeholder="Full Name" required />
-      <input type="tel" placeholder="Phone Number" required />
-    </div>
-
-    <div class="form-row">
-      <select id="brand" required>
-        <option value="">Select Device Brand</option>
-        <option>Apple (iPhone)</option>
-        <option>Samsung</option>
-        <option>Google Pixel</option>
-        <option>Motorola</option>
-        <option>Tablet (iPad / Android)</option>
-        <option>Laptop / Computer</option>
-        <option>Smartwatch</option>
-        <option>Game Console</option>
-        <option>Other Device</option>
-      </select>
-
-      <select id="model" required>
-        <option value="">Select Model</option>
-      </select>
-    </div>
-
-    <div class="form-row">
-      <select required>
-        <option value="">Repair Type</option>
-        <option>Screen Repair</option>
-        <option>Battery Replacement</option>
-        <option>Charging Port</option>
-        <option>Camera</option>
-        <option>Water Damage</option>
-        <option>Other Issue</option>
-      </select>
-
-      <input type="date" required />
-    </div>
-
-    <textarea placeholder="Additional Notes (Optional)"></textarea>
-
-    <button type="submit">Submit Appointment</button>
-  </form>
-</section>
-
-<!-- ================= REVIEWS ================= -->
-<section id="reviews" class="reviews">
-  <h2>Customer Reviews</h2>
-
-  <!-- Elfsight Google Reviews -->
-  <script src="https://elfsightcdn.com/platform.js" async></script>
-  <div class="elfsight-app-029501b4-d6d9-4967-95eb-cb838f4c1645"></div>
-</section>
-
-<!-- ================= LOCATION ================= -->
-<section id="location" class="location">
-  <div class="location-grid">
-    <iframe
-      src="https://www.google.com/maps?q=CELLAXS%20Phone%20Repair%201500%20S%20Willow%20St%20Manchester%20NH&output=embed"
-      loading="lazy">
-    </iframe>
-
-    <img src="images/store.jpg.jpg" alt="CellAXS Store">
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <p>© 2025 CellAXS Phone Repair – Manchester, NH</p>
-</footer>
-
-<!-- ================= SCRIPT ================= -->
 <script>
-const models = {
-  "Apple (iPhone)": [
-    "iPhone 6 / 6s / 7 / 8",
-    "iPhone X / XR / XS / XS Max",
-    "iPhone 11 / 11 Pro / Pro Max",
-    "iPhone 12 / 12 Pro / Pro Max",
-    "iPhone 13 / 13 Pro / Pro Max",
-    "iPhone 14 / 14 Pro / Pro Max",
-    "iPhone 15 / 15 Pro / Pro Max",
-    "iPhone 16 Series",
-    "iPhone 17 Series"
-  ],
-  "Samsung": [
-    "Galaxy S Series",
-    "Galaxy Note Series",
-    "Galaxy A Series",
-    "Galaxy Z Flip / Fold"
-  ],
-  "Google Pixel": [
-    "Pixel 6 / 6 Pro",
-    "Pixel 7 / 7 Pro",
-    "Pixel 8 / 8 Pro",
-    "Pixel 9 Series"
-  ],
-  "Motorola": [
-    "Moto G Series",
-    "Moto E Series",
-    "Edge Series",
-    "Razr Foldables"
-  ],
-  "Tablet (iPad / Android)": [
-    "iPad",
-    "iPad Air",
-    "iPad Pro",
-    "Samsung Galaxy Tab",
-    "Other Tablet"
-  ],
-  "Laptop / Computer": [
-    "MacBook Air",
-    "MacBook Pro",
-    "Windows Laptop",
-    "Desktop Computer"
-  ],
-  "Smartwatch": [
-    "Apple Watch",
-    "Samsung Galaxy Watch",
-    "Other Smartwatch"
-  ],
-  "Game Console": [
-    "PlayStation",
-    "Xbox",
-    "Nintendo Switch"
-  ],
-  "Other Device": [
-    "Other Device"
-  ]
+const brand = document.getElementById("brand");
+const series = document.getElementById("series");
+const model = document.getElementById("model");
+
+/* UTIL FUNCTIONS */
+function range(start, end) {
+  return Array.from({ length: end - start + 1 }, (_, i) => start + i);
+}
+
+function addVariants(base, variants) {
+  return variants.map(v => `${base} ${v}`);
+}
+
+/* DATA GENERATORS */
+const data = {
+
+  Apple: {
+    "iPhone Series": () => {
+      let models = [];
+      range(6, 17).forEach(n => {
+        models.push(`iPhone ${n}`);
+        models.push(`iPhone ${n} Plus`);
+        models.push(`iPhone ${n} Pro`);
+        models.push(`iPhone ${n} Pro Max`);
+        if (n >= 12 && n <= 13) models.push(`iPhone ${n} Mini`);
+      });
+      return models;
+    }
+  },
+
+  Samsung: {
+    "Galaxy S Series": () => {
+      let models = [];
+      range(6, 24).forEach(n => {
+        models.push(`Galaxy S${n}`);
+        models.push(`Galaxy S${n}+`);
+        models.push(`Galaxy S${n} Ultra`);
+        models.push(`Galaxy S${n} FE`);
+      });
+      return models;
+    },
+
+    "Galaxy A Series": () => {
+      let models = [];
+      range(1, 99).forEach(n => {
+        models.push(`Galaxy A${n}`);
+        models.push(`Galaxy A${n}s`);
+        models.push(`Galaxy A${n} 5G`);
+      });
+      return models;
+    },
+
+    "Galaxy Z Series": () => [
+      "Z Flip", "Z Flip 3", "Z Flip 4", "Z Flip 5",
+      "Z Fold", "Z Fold 2", "Z Fold 3", "Z Fold 4", "Z Fold 5"
+    ]
+  },
+
+  Google: {
+    "Pixel Series": () => {
+      let models = [];
+      range(1, 9).forEach(n => {
+        models.push(`Pixel ${n}`);
+        models.push(`Pixel ${n} Pro`);
+        if (n >= 6) models.push(`Pixel ${n} Fold`);
+      });
+      return models;
+    }
+  },
+
+  Motorola: {
+    "Moto G Series": () => [
+      "Moto G Play", "Moto G Power", "Moto G Stylus",
+      "Moto G Fast", "Moto G Pure"
+    ],
+    "Moto E Series": () => [
+      "Moto E", "Moto E5", "Moto E6", "Moto E7", "Moto E13", "Moto E22"
+    ],
+    "Edge Series": () => [
+      "Motorola Edge", "Edge+", "Edge 20", "Edge 30", "Edge 40", "Edge 50"
+    ],
+    "Razr Series": () => [
+      "Razr 5G", "Razr+", "Razr 40", "Razr 40 Ultra"
+    ]
+  },
+
+  Tablet: {
+    "iPad": () => [
+      "iPad 7th Gen", "8th Gen", "9th Gen", "10th Gen"
+    ],
+    "iPad Air": () => [
+      "Air 3", "Air 4", "Air 5"
+    ],
+    "iPad Pro": () => [
+      "11-inch", "12.9-inch"
+    ],
+    "Android Tablet": () => [
+      "Galaxy Tab A", "Galaxy Tab S", "Other Android Tablet"
+    ]
+  },
+
+  Laptop: {
+    "MacBook": () => [
+      "MacBook Air", "MacBook Pro 13", "MacBook Pro 14", "MacBook Pro 16"
+    ],
+    "Windows Laptop": () => [
+      "Dell", "HP", "Lenovo", "Asus", "Acer"
+    ]
+  },
+
+  Watch: {
+    "Apple Watch": () => [
+      "Series 4", "5", "6", "7", "8", "9", "Ultra", "Ultra 2"
+    ],
+    "Samsung Watch": () => [
+      "Galaxy Watch 4", "5", "6"
+    ]
+  },
+
+  Console: {
+    "PlayStation": () => [
+      "PS4", "PS4 Slim", "PS4 Pro", "PS5", "PS5 Digital"
+    ],
+    "Xbox": () => [
+      "Xbox One", "One S", "One X", "Series S", "Series X"
+    ],
+    "Nintendo": () => [
+      "Switch", "Switch OLED", "Switch Lite"
+    ]
+  },
+
+  Other: {
+    "Other Device": () => ["Please describe your device"]
+  }
 };
 
-document.getElementById("brand").addEventListener("change", function () {
-  const modelSelect = document.getElementById("model");
-  modelSelect.innerHTML = '<option value="">Select Model</option>';
+/* EVENTS */
+brand.addEventListener("change", () => {
+  series.innerHTML = '<option value="">Select Series</option>';
+  model.innerHTML = '<option value="">Select Model</option>';
 
-  if (models[this.value]) {
-    models[this.value].forEach(m => {
-      const opt = document.createElement("option");
-      opt.textContent = m;
-      modelSelect.appendChild(opt);
+  if (data[brand.value]) {
+    Object.keys(data[brand.value]).forEach(s => {
+      series.innerHTML += `<option value="${s}">${s}</option>`;
+    });
+  }
+});
+
+series.addEventListener("change", () => {
+  model.innerHTML = '<option value="">Select Model</option>';
+
+  const generator = data[brand.value][series.value];
+  if (generator) {
+    generator().forEach(m => {
+      model.innerHTML += `<option>${m}</option>`;
     });
   }
 });
 </script>
-
-</body>
-</html>
