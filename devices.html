@@ -15,12 +15,8 @@ const deviceModels = {
         list.push(`iPhone ${n}`, `iPhone ${n} Plus`);
       } else {
         list.push(`iPhone ${n}`);
-        if (n >= 11) {
-          list.push(`iPhone ${n} Pro`, `iPhone ${n} Pro Max`);
-        }
-        if (n === 12 || n === 13) {
-          list.push(`iPhone ${n} Mini`);
-        }
+        if (n >= 11) list.push(`iPhone ${n} Pro`, `iPhone ${n} Pro Max`);
+        if (n === 12 || n === 13) list.push(`iPhone ${n} Mini`);
       }
     });
     return list;
@@ -34,12 +30,9 @@ const deviceModels = {
       if (n >= 20) list.push(`Galaxy S${n} Ultra`);
       if (n >= 21) list.push(`Galaxy S${n} FE`);
     });
-
     range(1, 55).forEach(n => {
-      list.push(`Galaxy A${n}`);
-      list.push(`Galaxy A${n} 5G`);
+      list.push(`Galaxy A${n}`, `Galaxy A${n} 5G`);
     });
-
     return list;
   },
 
@@ -64,11 +57,9 @@ brand.addEventListener("change", () => {
   issue.disabled = true;
   contact.classList.add("hidden");
 
-  if (deviceModels[brand.value]) {
-    deviceModels[brand.value]().forEach(m => {
-      model.innerHTML += `<option>${m}</option>`;
-    });
-  }
+  deviceModels[brand.value]().forEach(m => {
+    model.innerHTML += `<option>${m}</option>`;
+  });
 });
 
 model.addEventListener("change", () => {
