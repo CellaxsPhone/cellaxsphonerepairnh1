@@ -3,21 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>CellAXS Phone Repair | Manchester NH</title>
-  <meta name="description" content="CellAXS Phone Repair in Manchester NH. iPhone, Samsung, Pixel, Motorola, Tablet, Laptop repairs. Located inside Mall of New Hampshire.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<!-- NAV -->
-<header class="navbar">
-  <div class="nav-inner">
-    <strong>CellAXS Phone Repair</strong>
+<header class="topbar">
+  <div class="container">
+    <div class="logo">CellAXS Phone Repair</div>
     <nav>
-      <a href="#appointment">Appointment</a>
+      <a href="#repair">Repair</a>
       <a href="#reviews">Reviews</a>
       <a href="#location">Location</a>
       <a href="tel:16039139693">Call</a>
@@ -28,66 +24,58 @@
 <!-- HERO -->
 <section class="hero">
   <img src="images/hero.jpg.jpg" alt="CellAXS Phone Repair">
-  <div class="hero-content">
-    <h1>Fast & Reliable Device Repair</h1>
-    <p>Phones • Tablets • Laptops • Smartwatches • Consoles</p>
+  <div class="hero-text">
+    <h1>Fast & Professional Device Repair</h1>
+    <p>Phone • Tablet • Laptop • Console</p>
   </div>
 </section>
 
-<!-- APPOINTMENT -->
-<section id="appointment" class="section appointment">
-  <h2>Book an Appointment</h2>
+<!-- REPAIR FLOW -->
+<section id="repair" class="repair">
+  <h2>Start Your Repair</h2>
 
-  <form class="appointment-form">
-    <input type="text" placeholder="Full Name" required>
-    <input type="tel" placeholder="Phone Number" required>
-
-    <select id="brand" required>
+  <div class="repair-box">
+    <select id="brand">
       <option value="">Select Device Brand</option>
-      <option value="Apple">Apple (iPhone)</option>
-      <option value="Samsung">Samsung</option>
-      <option value="Google">Google Pixel</option>
-      <option value="Motorola">Motorola</option>
-      <option value="Tablet">Tablet</option>
-      <option value="Laptop">Laptop</option>
-      <option value="Watch">Smartwatch</option>
-      <option value="Console">Game Console</option>
-      <option value="Other">Other Device</option>
+      <option value="iphone">Apple iPhone</option>
+      <option value="samsung">Samsung</option>
+      <option value="pixel">Google Pixel</option>
+      <option value="motorola">Motorola</option>
     </select>
 
-    <select id="series" required>
-      <option value="">Select Series</option>
+    <select id="model" disabled>
+      <option>Select Model</option>
     </select>
 
-    <select id="model" required>
-      <option value="">Select Model</option>
-    </select>
-
-    <select required>
-      <option value="">Repair Type</option>
+    <select id="issue" disabled>
+      <option>Select Issue</option>
       <option>Screen Repair</option>
       <option>Battery Replacement</option>
       <option>Charging Port</option>
-      <option>Camera</option>
+      <option>Camera Repair</option>
       <option>Water Damage</option>
-      <option>Other Issue</option>
+      <option>Other</option>
     </select>
 
-    <button type="submit">Submit Appointment</button>
-  </form>
+    <div id="contact" class="hidden">
+      <input type="text" placeholder="Full Name">
+      <input type="tel" placeholder="Phone Number">
+      <button>Submit Repair Request</button>
+    </div>
+  </div>
 </section>
 
 <!-- REVIEWS -->
-<section id="reviews" class="section reviews">
-  <h2>Customer Reviews</h2>
+<section id="reviews" class="reviews">
+  <h2>Google Reviews</h2>
 
   <!-- Elfsight Google Reviews -->
   <script src="https://elfsightcdn.com/platform.js" async></script>
-  <div class="elfsight-app-029501b4-d6d9-4967-95eb-cb838f4c1645" data-elfsight-app-lazy></div>
+  <div class="elfsight-app-029501b4-d6d9-4967-95eb-cb838f4c1645"></div>
 </section>
 
 <!-- LOCATION -->
-<section id="location" class="section location">
+<section id="location" class="location">
   <h2>Our Location</h2>
 
   <div class="location-grid">
@@ -98,99 +86,14 @@
 
     <img src="images/store.jpg.jpg" alt="CellAXS Store">
   </div>
-
-  <p class="address">
-    1500 S Willow St #E157, Manchester, NH 03103  
-    <br>
-    Inside Mall of New Hampshire
-  </p>
 </section>
 
 <footer>
-  © 2025 CellAXS Phone Repair · Manchester, NH
+  © 2025 CellAXS Phone Repair · Manchester NH
 </footer>
 
-<!-- SCRIPT -->
-<script>
-const brand = document.getElementById("brand");
-const series = document.getElementById("series");
-const model = document.getElementById("model");
-
-const data = {
-  Apple: {
-    "iPhone Models": [
-      "iPhone 6", "6 Plus", "6s", "6s Plus",
-      "SE (1st Gen)",
-      "iPhone 7", "7 Plus",
-      "iPhone 8", "8 Plus",
-      "iPhone X", "XR", "XS", "XS Max",
-      "iPhone 11", "11 Pro", "11 Pro Max",
-      "iPhone 12 Mini", "12", "12 Pro", "12 Pro Max",
-      "iPhone 13 Mini", "13", "13 Pro", "13 Pro Max",
-      "iPhone 14", "14 Plus", "14 Pro", "14 Pro Max",
-      "iPhone 15", "15 Plus", "15 Pro", "15 Pro Max",
-      "iPhone 16", "16 Pro", "16 Pro Max",
-      "iPhone 17", "17 Pro", "17 Pro Max"
-    ]
-  },
-
-  Samsung: {
-    "Galaxy S Series": [
-      "S8", "S9", "S10", "S10+", "S20", "S20+", "S20 Ultra",
-      "S21", "S21+", "S21 Ultra", "S21 FE",
-      "S22", "S22+", "S22 Ultra",
-      "S23", "S23+", "S23 Ultra",
-      "S24", "S24+", "S24 Ultra",
-      "S25", "S25 Ultra"
-    ],
-    "Galaxy A Series": [
-      "A01","A02","A03","A04","A05",
-      "A10","A11","A12","A13","A14","A15",
-      "A20","A21","A22","A23","A24","A25",
-      "A30","A31","A32","A33","A34","A35",
-      "A50","A51","A52","A53","A54","A55"
-    ]
-  },
-
-  Google: {
-    "Pixel Series": [
-      "Pixel 4","4a","5","5a",
-      "Pixel 6","6a","6 Pro",
-      "Pixel 7","7a","7 Pro",
-      "Pixel 8","8 Pro",
-      "Pixel 9","9 Pro","9 Pro XL"
-    ]
-  },
-
-  Motorola: {
-    "Moto Series": [
-      "Moto G","Moto G Power","Moto G Stylus",
-      "Moto E",
-      "Motorola Edge","Edge+",
-      "Razr","Razr 5G","Razr 40","Razr 50"
-    ]
-  }
-};
-
-brand.addEventListener("change", () => {
-  series.innerHTML = '<option value="">Select Series</option>';
-  model.innerHTML = '<option value="">Select Model</option>';
-
-  if (data[brand.value]) {
-    Object.keys(data[brand.value]).forEach(s => {
-      series.innerHTML += `<option value="${s}">${s}</option>`;
-    });
-  }
-});
-
-series.addEventListener("change", () => {
-  model.innerHTML = '<option value="">Select Model</option>';
-  const list = data[brand.value][series.value];
-  if (list) {
-    list.forEach(m => model.innerHTML += `<option>${m}</option>`);
-  }
-});
-</script>
+<!-- JAVASCRIPT -->
+<script src="devices.js"></script>
 
 </body>
 </html>
