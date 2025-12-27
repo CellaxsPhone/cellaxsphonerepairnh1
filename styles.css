@@ -1,40 +1,40 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
 body {
-  background: #0b1c2d;
-  color: #fff;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6fb;
+  color: #222;
 }
 
-/* NAVBAR */
-.navbar {
-  background: #081523;
+.topbar {
+  background: #0b3c5d;
   padding: 15px 0;
 }
 
-.navbar .container {
-  width: 90%;
+.container {
+  max-width: 1200px;
   margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 }
 
-.navbar a {
+.logo {
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+nav a {
   color: #fff;
   margin-left: 20px;
   text-decoration: none;
+  font-weight: 600;
 }
 
-/* HERO */
 .hero {
+  height: 300px;
   position: relative;
-  height: 420px;
-  overflow: hidden;
 }
 
 .hero img {
@@ -46,75 +46,73 @@ body {
 .hero-text {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(11,60,93,0.65);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #fff;
+  text-align: center;
 }
 
-/* APPOINTMENT */
-.appointment {
-  padding: 60px 10%;
+.repair {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 0 20px;
 }
 
-.appointment-form {
-  max-width: 900px;
-  margin: auto;
-  background: #101f33;
+.repair-box {
+  background: #fff;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-.form-row {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 15px;
-}
-
-input, select, textarea {
+select, input {
   width: 100%;
-  padding: 12px;
-  border-radius: 5px;
-  border: none;
+  padding: 14px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }
 
 button {
   width: 100%;
   padding: 14px;
-  background: #1e90ff;
-  border: none;
+  background: #0b3c5d;
   color: #fff;
-  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
   cursor: pointer;
 }
 
-/* REVIEWS */
-.reviews {
-  padding: 60px 10%;
+.hidden {
+  display: none;
 }
 
-/* LOCATION */
+.reviews, .location {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
 .location-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 25px;
 }
 
-.location iframe {
+iframe {
   width: 100%;
-  height: 350px;
+  height: 320px;
   border: none;
+  border-radius: 15px;
 }
 
-.location img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-}
-
-/* FOOTER */
-.footer {
+footer {
+  background: #0b3c5d;
+  color: #fff;
   text-align: center;
-  padding: 20px;
-  background: #081523;
+  padding: 25px;
 }
