@@ -1,47 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Devices We Repair | CellAXS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-</head>
+const brand = document.getElementById("brand");
+const model = document.getElementById("model");
+const issue = document.getElementById("issue");
+const contact = document.getElementById("contact");
 
-<body>
+function range(start, end) {
+  return Array.from({ length: end - start + 1 }, (_, i) => start + i);
+}
 
-<header>
-  <strong>CellAXS Phone Repair</strong>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="index.html#appointment" class="cta">Book Now</a>
-  </nav>
-</header>
+const deviceModels = {
+  iphone: () => {
+    let list = [];
+    range(6, 17).forEach(n => {
+      if (n <= 8) {
+        list.push(`iPhone ${n}`, `iPhone ${n} Plus`);
+      } else {
+        list.push(`iPhone ${n}`);
+        if (n >= 11) {
+          list.push(`iPhone ${n} Pro`, `iPhone ${n} Pro Max`);
+        }
+        if (n === 12 || n === 13) {
+          list.push(`iPhone ${n} Mini`);
+        }
+      }
+    });
+    return list;
+  },
 
-<section class="hero small">
-  <div class="hero-content">
-    <h1>Select Your Device</h1>
-    <p>Professional repair for all major electronics</p>
-  </div>
-</section>
+  samsung: () => {
+    let list = [];
+    range(8, 25).forEach(n => {
+      list.push(`Galaxy S${n}`);
+      if (n >= 10) list.push(`Galaxy S${n}+`);
+      if (n >= 20) list.push(`Galaxy S${n} Ultra`);
+      if (n >= 21) list.push(`Galaxy S${n} FE`);
+    });
 
-<section class="section">
-  <div class="devices">
-    <div class="device"><img src="images/iphone.jpg.avif"><h3>iPhone</h3></div>
-    <div class="device"><img src="images/samsung.jpg.avif"><h3>Samsung</h3></div>
-    <div class="device"><img src="images/pixel.jpg.avif"><h3>Google Pixel</h3></div>
-    <div class="device"><img src="images/motorola.jpg.avif"><h3>Motorola</h3></div>
-    <div class="device"><img src="images/ipad.jpg.jpg"><h3>iPad / Tablet</h3></div>
-    <div class="device"><img src="images/laptop.jpg.avif"><h3>Laptop</h3></div>
-    <div class="device"><img src="images/macbook.jpg.jpg"><h3>MacBook</h3></div>
-    <div class="device"><img src="images/applewatch.jpg.avif"><h3>Apple Watch</h3></div>
-    <div class="device"><img src="images/console.jpg.avif"><h3>Game Console</h3></div>
-    <div class="device"><img src="images/other.jpg.avif"><h3>Other Devices</h3></div>
-  </div>
-</section>
+    range(1, 55).forEach(n => {
+      list.push(`Galaxy A${n}`);
+      list.push(`Galaxy A${n} 5G`);
+    });
 
-<footer>
-  © 2025 CellAXS Phone Repair
-</footer>
+    return list;
+  },
 
-</body>
-</html>
+  pixel: () => [
+    "Pixel 5", "Pixel 5a",
+    "Pixel 6", "Pixel 6a", "Pixel 6 Pro",
+    "Pixel 7", "Pixel 7a", "Pixel 7 Pro",
+    "Pixel 8", "Pixel 8 Pro",
+    "Pixel 9", "Pixel 9 Pro"
+  ],
+
+  motorola: () => [
+    "Moto G", "Moto G Power", "Moto G Stylus",
+    "Moto E", "Moto Edge", "Moto Edge+",
+    "Motorola Razr", "Razr 5G", "Razr 40", "Razr 50"
+  ]
+};
+
+brand.addEventListener("change", () => {
+  model.innerHTML = "<option>Select Model</option>";
+  model.disabled = false;
+  issue.disabled = true;
+  contact.classList.add("hidden");
+
+  if (deviceModels[brand.value]) {
+    deviceModels[brand.value]().forEach(m => {
+      model.innerHTML += `<option>${m}</option>`;
+    });
+  }
+});
+
+model.addEventListener("change", () => {
+  issue.disabled = false;
+});
+
+issue.addEventListener("change", () => {
+  contact.classList.remove("hidden");
+});
