@@ -9,34 +9,56 @@
 </head>
 <body>
 
+<!-- TOP BAR -->
 <header class="topbar">
   <div class="container">
     <div class="logo">CellAXS Phone Repair</div>
     <nav>
       <a href="#repair">Repair</a>
+      <a href="#devices">Devices</a>
       <a href="#reviews">Reviews</a>
       <a href="#location">Location</a>
-      <a href="tel:16039139693">Call</a>
+      <a class="call" href="tel:16039139693">Call Now</a>
     </nav>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <img src="images/hero.jpg.jpg" alt="CellAXS Phone Repair">
-  <div class="hero-text">
-    <h1>Fast & Professional Device Repair</h1>
-    <p>Phone • Tablet • Laptop • Console</p>
+  <img src="images/hero.jpg.jpg" alt="CellAXS Phone Repair Manchester NH">
+  <div class="hero-overlay">
+    <h1>Fast & Reliable Device Repair</h1>
+    <p>Phones • Tablets • Laptops • Consoles</p>
+    <a href="#repair" class="hero-btn">Book an Appointment</a>
   </div>
 </section>
 
-<!-- REPAIR FLOW -->
-<section id="repair" class="repair">
-  <h2>Start Your Repair</h2>
+<!-- DEVICES -->
+<section id="devices" class="devices">
+  <h2>Devices We Repair</h2>
 
-  <div class="repair-box">
+  <div class="device-grid">
+    <div><img src="images/iphone.jpg.avif"><span>iPhone</span></div>
+    <div><img src="images/samsung.jpg.avif"><span>Samsung</span></div>
+    <div><img src="images/android.jpg.avif"><span>Android</span></div>
+    <div><img src="images/pixel.jpg.avif"><span>Google Pixel</span></div>
+    <div><img src="images/motorola.jpg.avif"><span>Motorola</span></div>
+    <div><img src="images/ipad.jpg.jpg"><span>iPad</span></div>
+    <div><img src="images/laptop.jpg.avif"><span>Laptop</span></div>
+    <div><img src="images/macbook.jpg.jpg"><span>MacBook</span></div>
+    <div><img src="images/applewatch.jpg.avif"><span>Apple Watch</span></div>
+    <div><img src="images/console.jpg.avif"><span>Game Console</span></div>
+    <div><img src="images/other.jpg.avif"><span>Other Devices</span></div>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section id="repair" class="repair">
+  <h2>Book a Repair Appointment</h2>
+
+  <div class="repair-card">
     <select id="brand">
-      <option value="">Select Device Brand</option>
+      <option value="">Select Device Type</option>
       <option value="iphone">Apple iPhone</option>
       <option value="samsung">Samsung</option>
       <option value="pixel">Google Pixel</option>
@@ -54,37 +76,35 @@
       <option>Charging Port</option>
       <option>Camera Repair</option>
       <option>Water Damage</option>
-      <option>Other</option>
+      <option>Other Issue</option>
     </select>
 
     <div id="contact" class="hidden">
       <input type="text" placeholder="Full Name">
       <input type="tel" placeholder="Phone Number">
-      <button>Submit Repair Request</button>
+      <button id="submitBtn">Submit Appointment</button>
     </div>
   </div>
 </section>
 
 <!-- REVIEWS -->
 <section id="reviews" class="reviews">
-  <h2>Google Reviews</h2>
+  <h2>Customer Reviews</h2>
 
-  <!-- Elfsight Google Reviews -->
   <script src="https://elfsightcdn.com/platform.js" async></script>
   <div class="elfsight-app-029501b4-d6d9-4967-95eb-cb838f4c1645"></div>
 </section>
 
 <!-- LOCATION -->
 <section id="location" class="location">
-  <h2>Our Location</h2>
+  <h2>Visit Our Store</h2>
 
   <div class="location-grid">
     <iframe
       src="https://www.google.com/maps?q=CELLAXS+Phone+Repair+1500+S+Willow+St+E157+Manchester+NH+03103&output=embed"
-      loading="lazy">
-    </iframe>
+      loading="lazy"></iframe>
 
-    <img src="images/store.jpg.jpg" alt="CellAXS Store">
+    <img src="images/store.jpg.jpg" alt="CellAXS Store Manchester NH">
   </div>
 </section>
 
@@ -92,8 +112,6 @@
   © 2025 CellAXS Phone Repair · Manchester NH
 </footer>
 
-<!-- JAVASCRIPT -->
 <script src="devices.js"></script>
-
 </body>
 </html>
